@@ -1,13 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // Generate dynamic blog cards if container exists
+    const blogGridContainer = document.getElementById('blogGridContainer');
+    if (blogGridContainer && typeof articleData !== 'undefined') {
+        let delay = 0;
+        for (const [id, article] of Object.entries(articleData)) {
+            const delayClass = delay > 0 ? `delay-${delay}` : '';
+            const cardHtml = `
+                <article class="blog-card reveal ${delayClass}">
+                    <div class="blog-image" style="background-image: url('${article.imageUrl}');" aria-label="Imagen de ${article.title}">
+                    </div>
+                    <div class="blog-content">
+                        <h3>${article.title}</h3>
+                        <p>${article.summary}</p>
+                        <a href="articulo.html?id=${id}" class="read-more">Leer artículo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            `;
+            blogGridContainer.innerHTML += cardHtml;
+            delay += 100;
+        }
+    }
+
     // Header Scroll Effect
     const header = document.querySelector('.header');
     
     const handleScroll = () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
     };
     
@@ -20,21 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    if (hamburger) {
+    if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
     }
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if(hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
+    if (navLinks && hamburger && navMenu) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
         });
-    });
+    }
 
     // Active Navigation Link on Scroll using IntersectionObserver
     const sections = document.querySelectorAll('section[id], footer[id]');
