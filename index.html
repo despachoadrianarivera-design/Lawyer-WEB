@@ -18,42 +18,8 @@
 </head>
 
 <body>
-
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="top-bar">
-            <div class="container">
-                <div class="contact-info">
-                    <span><i class="fa-solid fa-envelope"></i> <a href="mailto:adrianariverahe12@icloud.com">adrianariverahe12@icloud.com</a></span>
-                    <span><i class="fa-regular fa-clock"></i> L-V: 9:00 - 14:00</span>
-                    <span><i class="fa-solid fa-phone"></i> <a href="tel:+526691684098">(669) 168 4098</a></span>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/14hxS9ZGhko/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/asesoriaprontayexpedita?igsh=MXY5M2RscTYyaWZ1Zw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar">
-            <div class="container nav-container">
-                <a href="#" class="logo" aria-label="Inicio">
-                    <img src="assets/logo.jpg" alt="Adriana Rivera Logo" class="img-logo">
-                </a>
-                <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
-                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li>
-                    <li><a href="#contacto" class="nav-link btn-contacto">Contacto</a></li>
-                </ul>
-                <button class="hamburger" aria-label="Menu principal">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <!-- Header Component -->
+    <app-header></app-header>
 
     <main>
         <!-- Hero Section -->
@@ -216,36 +182,8 @@
                     <div class="divider"></div>
                 </div>
 
-                <div class="blog-grid">
-                    <article class="blog-card reveal">
-                        <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop');" aria-label="Imagen de juicio oral mercantil">
-                        </div>
-                        <div class="blog-content">
-                            <h3>El procedimiento oral mercantil en México</h3>
-                            <p>El 27 de Enero de 2011 fue publicado en el diario oficial la reforma que da paso a una nueva era judicial en nuestro país...</p>
-                            <a href="#" class="read-more">Leer artículo <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card reveal delay-100">
-                        <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=800&auto=format&fit=crop');" aria-label="Imagen sobre divorcio incausado">
-                        </div>
-                        <div class="blog-content">
-                            <h3>Divorcio sin expresión de causa</h3>
-                            <p>Cuántas veces hemos escuchado que el divorcio es un proceso largo y tedioso. Hoy en día, la ley permite opciones más ágiles...</p>
-                            <a href="#" class="read-more">Leer artículo <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card reveal delay-200">
-                        <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?q=80&w=800&auto=format&fit=crop');" aria-label="Imagen de cámara grabando a policía">
-                        </div>
-                        <div class="blog-content">
-                            <h3>¿Es ilegal grabar a un policía con el celular?</h3>
-                            <p>Analizamos las implicaciones legales de documentar el actuar de los servidores públicos frente a nuestros derechos civiles...</p>
-                            <a href="#" class="read-more">Leer artículo <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
+                <div class="blog-grid" id="blogGridContainer">
+                    <!-- Blog cards will be injected here via JavaScript from data.js -->
                 </div>
                 <div class="text-center mt-4 reveal">
                     <a href="#" class="btn btn-outline">Cargar más artículos</a>
@@ -263,64 +201,12 @@
         </section>
     </main>
 
-    <!-- Contact Footer -->
-    <footer id="contacto" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <h3>Adriana <span>Rivera</span></h3>
-                <p>Brindamos soluciones integrales con un alto estándar ético. Nuestra experiencia respalda nuestra trayectoria defendiendo los intereses de cada cliente.</p>
-                <div class="social-links footer-socials">
-                    <a href="https://www.facebook.com/share/14hxS9ZGhko/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/asesoriaprontayexpedita?igsh=MXY5M2RscTYyaWZ1Zw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
+    <!-- Footer Component -->
+    <app-footer></app-footer>
 
-            <div class="footer-contact">
-                <h4>Oficina Central</h4>
-                <ul>
-                    <li>
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Calle Ramón López Alvarado #200<br>Local 1-A, Fracc. Tellería,<br>Mazatlán, Sinaloa, México.</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <span><a href="tel:+526691684098">Tel. (669) 168 4098</a></span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-envelope"></i>
-                        <span><a href="mailto:adrianariverahe12@icloud.com">adrianariverahe12@icloud.com</a></span>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-clock"></i>
-                        <span>L-V: 9:00 - 14:00</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-map">
-                <h4>Ubicación</h4>
-                <div class="map-placeholder">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Ram%C3%B3n%20L%C3%B3pez%20Alvarado%20200%2C%20Mazatl%C3%A1n%2C%20Sinaloa&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container flex-between">
-                <p>Adriana Rivera | Asesoría Legal | Todos los derechos reservados &copy; 2024</p>
-                <p><a href="#">Aviso de privacidad</a> | Diseño Web</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5216691684098" target="_blank" class="floating-whatsapp" aria-label="Contactar por WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="components.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
